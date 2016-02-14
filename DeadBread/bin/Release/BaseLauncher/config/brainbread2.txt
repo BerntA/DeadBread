@@ -1,0 +1,4 @@
+"Settings"
+{
+    "Path" "default"
+}

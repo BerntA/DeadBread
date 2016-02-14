@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{10E47180-AFBB-4EB6-9360-3E3FEE575A9D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DeadBread</RootNamespace>
+    <AssemblyName>DeadBread</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>DeadBread.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\DownloadHandler.cs" />
+    <Compile Include="Base\EngineHandler.cs" />
+    <Compile Include="Base\Globals.cs" />
+    <Compile Include="Base\SysTrayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\SysTrayForm.Designer.cs">
+      <DependentUpon>SysTrayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\ToolHandler.cs" />
+    <Compile Include="Controls\CheckBoxNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckBoxNew.Designer.cs">
+      <DependentUpon>CheckBoxNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ConVarList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ConVarList.Designer.cs">
+      <DependentUpon>ConVarList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomButton.Designer.cs">
+      <DependentUpon>CustomButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DownloadBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DownloadBar.Designer.cs">
+      <DependentUpon>DownloadBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GameSelectionBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GameSelectionBox.Designer.cs">
+      <DependentUpon>GameSelectionBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GroupSelectionBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GroupSelectionBox.Designer.cs">
+      <DependentUpon>GroupSelectionBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IconButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\IconButton.Designer.cs">
+      <DependentUpon>IconButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ItemList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ItemList.Designer.cs">
+      <DependentUpon>ItemList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ListButton.Designer.cs">
+      <DependentUpon>ListButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NavigationButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NavigationButton.Designer.cs">
+      <DependentUpon>NavigationButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NumericVar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NumericVar.Designer.cs">
+      <DependentUpon>NumericVar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SelectionBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SelectionBox.Designer.cs">
+      <DependentUpon>SelectionBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SimpleButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SimpleButton.Designer.cs">
+      <DependentUpon>SimpleButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WarningCloseButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WarningCloseButton.Designer.cs">
+      <DependentUpon>WarningCloseButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WritableField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WritableField.Designer.cs">
+      <DependentUpon>WritableField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\DataHandler.cs" />
+    <Compile Include="Filesystem\KeyValues.cs" />
+    <Compile Include="Filesystem\KeyValuesUtils.cs" />
+    <Compile Include="GameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameForm.Designer.cs">
+      <DependentUpon>GameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SDKForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SDKForm.Designer.cs">
+      <DependentUpon>SDKForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerForm.Designer.cs">
+      <DependentUpon>ServerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm.Designer.cs">
+      <DependentUpon>UpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WarningNotifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarningNotifyForm.Designer.cs">
+      <DependentUpon>WarningNotifyForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\SysTrayForm.resx">
+      <DependentUpon>SysTrayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CheckBoxNew.resx">
+      <DependentUpon>CheckBoxNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ConVarList.resx">
+      <DependentUpon>ConVarList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CustomButton.resx">
+      <DependentUpon>CustomButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DownloadBar.resx">
+      <DependentUpon>DownloadBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GameSelectionBox.resx">
+      <DependentUpon>GameSelectionBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GroupSelectionBox.resx">
+      <DependentUpon>GroupSelectionBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\IconButton.resx">
+      <DependentUpon>IconButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ItemList.resx">
+      <DependentUpon>ItemList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ListButton.resx">
+      <DependentUpon>ListButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NavigationButton.resx">
+      <DependentUpon>NavigationButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NumericVar.resx">
+      <DependentUpon>NumericVar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SelectionBox.resx">
+      <DependentUpon>SelectionBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SimpleButton.resx">
+      <DependentUpon>SimpleButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WarningCloseButton.resx">
+      <DependentUpon>WarningCloseButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WritableField.resx">
+      <DependentUpon>WritableField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameForm.resx">
+      <DependentUpon>GameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SDKForm.resx">
+      <DependentUpon>SDKForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerForm.resx">
+      <DependentUpon>ServerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm.resx">
+      <DependentUpon>UpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarningNotifyForm.resx">
+      <DependentUpon>WarningNotifyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reperio_studios.png" />
+    <None Include="bin\Release\BaseLauncher\textures\controls\loading.gif" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\error.png" />
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

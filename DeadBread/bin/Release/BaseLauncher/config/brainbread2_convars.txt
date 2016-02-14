@@ -1,0 +1,5 @@
+BOOL 1 bb2_allow_latejoin <Allow Late Joining> <If this is zero then anyone who joins the game after roundstart will spawn as zombies by default.>
+BOOL 0 bb2_allow_profile_system <Allow Profile System> <Allow users to save and load their global stats.>
+INT 1 bb2_spawn_protection <Spawn Protection> <The value represents the seconds of spawn protection.>
+INT 0 bb2_allow_mercy <Mercy Value> <If this value is higher than zero its value will be used as a helper for zombie players, if a zombie player has died an X amount of times and is equal or higher than this value he will be granted mercy and will be switched over to the human team again.>
+INT 2 bb2_roundstart_requiredplayers <Required Players> <How many players are required to start a round?>

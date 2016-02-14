@@ -1,0 +1,43 @@
+sv_alltalk 1
+sv_allowupload 1
+sv_allowdownload 1
+cl_allowdownload 1
+cl_allowupload 1
+cl_downloadfilter all
+sv_region 255
+sv_master_legacy_mode 0
+
+// disable autoaim
+sv_aim 0
+
+// disable clients' ability to pause the server
+pausable 0
+
+// maximum client movement speed (1000 for BB)
+sv_maxspeed 1000
+
+// Set round timing behaviour
+sv_roundtimelimit 1000
+sv_rounddelay 8
+
+sv_cheats 0
+
+// Turn off friendlyfire
+mp_friendlyfire 0
+
+// Enable map and variable voting
+sv_mapvote 1
+sv_varvote 1
+
+// Save exp info in this file (/brainbread/<file>)
+sv_playerinfofile "players.lvl"
+
+// Global max amount of gibs/zombies. Values too high produce ED_Alloc error
+sv_gibcount 10
+sv_zombiecount 65
+
+// Gameover conditions (0 = unlimited)
+mp_teamscorelimit 0
+mp_fraglimit 0
+
+sv_exppotence 2

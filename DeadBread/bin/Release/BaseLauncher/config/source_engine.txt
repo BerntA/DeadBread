@@ -1,0 +1,6 @@
+"ENGINE"
+{
+    "LevelEditor" "hammer_ico" 
+	"ModelEditor" "hlmv_ico"
+	"Faceposer" "faceposer_ico"
+}

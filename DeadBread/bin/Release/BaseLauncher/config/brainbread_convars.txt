@@ -1,0 +1,4 @@
+INT 150 sv_expperlevel <XP Per Level> <How much xp do you need for each level?>
+INT 23 sv_maxlevel <Max Level> <Highest level available.>
+INT 24 sv_savexp <Store XP> <Save exp for 24h. (0 = don't save exp, -1 = save exp forever, X = save exp for X hours)>
+INT 1 sv_difficulty <Difficulty> <Difficulty affects respawn times, HP, damage, speed. 1 = 100%>
