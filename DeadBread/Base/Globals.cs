@@ -150,6 +150,7 @@ namespace DeadBread.Base
             public string startupArgs; // Arguments to use at startup.
             public string appID; // Steam Identifier.
             public string engine; // Which engine does this game run on? If empty we're running a custom engine!!!
+            public string customExecutable; // If not empty/NULL then launch this game from a custom executable within games/<engine>/<customExecutable.exe> -<command line> ...
             public string version; // Which version is this?
             public int gameID; // ID of this game.
             public bool isMod; // Is this a mod or game?
@@ -744,15 +745,25 @@ namespace DeadBread.Base
                 _pszGameProcess.StartInfo.CreateNoWindow = true;
                 _pszGameProcess.StartInfo.UseShellExecute = false;
                 _pszGameProcess.StartInfo.RedirectStandardOutput = true;
-                _pszGameProcess.StartInfo.WorkingDirectory = _szSteamPath;
-                _pszGameProcess.StartInfo.FileName = string.Format("{0}\\steam.exe", _szSteamPath);
 
-                if (GetActiveGameItem().engine == "goldsrc")
-                    _pszGameProcess.StartInfo.Arguments = string.Format("\"{0}\\steam.exe\" -applaunch {1} -game {2} {3} -steam", _szSteamPath, GetActiveGameItem().appID, GetActiveGameItem().root, szArgs);
-                else if (!GetActiveGameItem().isMod)
-                    _pszGameProcess.StartInfo.Arguments = string.Format("\"{0}\\steam.exe\" -applaunch {1} {2}", _szSteamPath, GetActiveGameItem().appID, szArgs);
+                if (string.IsNullOrEmpty(GetActiveGameItem().customExecutable))
+                {
+                    _pszGameProcess.StartInfo.WorkingDirectory = _szSteamPath;
+                    _pszGameProcess.StartInfo.FileName = string.Format("{0}\\steam.exe", _szSteamPath);
+
+                    if (GetActiveGameItem().engine == "goldsrc")
+                        _pszGameProcess.StartInfo.Arguments = string.Format("\"{0}\\steam.exe\" -applaunch {1} -game {2} {3} -steam", _szSteamPath, GetActiveGameItem().appID, GetActiveGameItem().root, szArgs);
+                    else if (!GetActiveGameItem().isMod)
+                        _pszGameProcess.StartInfo.Arguments = string.Format("\"{0}\\steam.exe\" -applaunch {1} {2}", _szSteamPath, GetActiveGameItem().appID, szArgs);
+                    else
+                        _pszGameProcess.StartInfo.Arguments = string.Format("\"{0}\\steam.exe\" -applaunch {1} -game \"{2}\\games\\{3}\\{4}\" {5} -steam", _szSteamPath, GetActiveGameItem().appID, GetAppPath(), GetActiveGameItem().engine, GetActiveGameItem().root, szArgs);
+                }
                 else
-                    _pszGameProcess.StartInfo.Arguments = string.Format("\"{0}\\steam.exe\" -applaunch {1} -game \"{2}\\games\\{3}\\{4}\" {5} -steam", _szSteamPath, GetActiveGameItem().appID, GetAppPath(), GetActiveGameItem().engine, GetActiveGameItem().root, szArgs);
+                {
+                    _pszGameProcess.StartInfo.WorkingDirectory = string.Format("{0}\\games\\{1}", GetAppPath(), GetActiveGameItem().engine);
+                    _pszGameProcess.StartInfo.FileName = string.Format("{0}\\games\\{1}\\{2}.exe", GetAppPath(), GetActiveGameItem().engine, GetActiveGameItem().customExecutable);
+                    _pszGameProcess.StartInfo.Arguments = string.Format("-game \"{0}\" {1}", GetActiveGameItem().root, szArgs);
+                }
 
                 _pszGameProcess.Start();
             }

@@ -150,6 +150,7 @@ namespace DeadBread.Database
                 item.version = sub.GetString("Version");
                 item.appID = sub.GetString("AppID");
                 item.engine = sub.GetString("Engine");
+                item.customExecutable = sub.GetString("CustomExecutable");
                 item.isMod = (sub.GetInt("Modification") >= 1);
                 item.isLocked = (sub.GetInt("Locked") >= 1);
                 item.gameID = index;

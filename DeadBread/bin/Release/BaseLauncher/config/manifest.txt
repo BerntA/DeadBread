@@ -1,7 +1,7 @@
 "Manifest"
 {
-    "AppDataURL" "http://www.reperio-studios.net/gamedata/DeadBread/AppData.txt"
-	"GameDataURL" "http://www.reperio-studios.net/gamedata/DeadBread/GameSelection.txt"
-	"MirrorDataURL" "http://www.reperio-studios.net/gamedata/DeadBread/MirrorInfo.txt"
-	"EngineDataURL" "http://www.reperio-studios.net/gamedata/DeadBread/EngineData.txt"
+    "AppDataURL" "http://www.reperio-studios.eu/gamedata/DeadBread/AppData.txt"
+	"GameDataURL" "http://www.reperio-studios.eu/gamedata/DeadBread/GameSelection.txt"
+	"MirrorDataURL" "http://www.reperio-studios.eu/gamedata/DeadBread/MirrorInfo.txt"
+	"EngineDataURL" "http://www.reperio-studios.eu/gamedata/DeadBread/EngineData.txt"
 }
